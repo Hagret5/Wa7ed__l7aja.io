@@ -1,0 +1,300 @@
+/* Base Styles */
+html, body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    background: #122139;
+    overflow: hidden;
+    font-family: Arial, sans-serif;
+}
+
+/* Container for the rose animation */
+.container {
+    width: 100px;
+    height: 300px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    transform: scale(0.6);
+}
+
+.container div {
+    position: absolute;
+}
+
+/* Glass vase */
+.glass {
+    height: 420px;
+    width: 250px;
+    border: 3px solid rgba(255, 255, 255, 0.5);
+    border-radius: 300px 300px 0 0;
+    left: -80px;
+    top: -100px;
+    border-bottom: 15px solid rgba(255, 255, 255, 0.5);
+}
+
+.glass:after {
+    content: '';
+    width: 8px;
+    height: 80px;
+    background: rgba(255, 255, 255, 0.28);
+    position: absolute;
+    border-radius: 100px;
+    left: 10px;
+    top: 180px;
+}
+
+.glass:before {
+    content: '';
+    width: 8px;
+    height: 15px;
+    background: rgba(255, 255, 255, 0.28);
+    position: absolute;
+    border-radius: 100px;
+    left: 10px;
+    top: 280px;
+}
+
+/* Rose glow effect */
+.glow {
+    width: 170px;
+    height: 170px;
+    border-radius: 100%;
+    border: 1px solid rgba(245, 148, 184, 0.47);
+    box-shadow: 0 0 10px rgba(245, 148, 184, 1);
+    left: -40px;
+    top: -40px;
+    transition: all 0.5s ease;
+    animation: glowing 2.5s ease-in-out infinite;
+}
+
+/* Rose petals */
+.rose-petals > div {
+    background: #d52d58;
+    width: 45px;
+    height: 80px;
+    position: absolute;
+    transition: all 0.5s ease-out;
+}
+
+.rose-petals > div:nth-child(1) {
+    border-radius: 15px;
+    left: 20px;
+    top: -6px;
+    background: #d52d58;
+}
+
+.rose-petals > div:nth-child(2),
+.rose-petals > div:nth-child(4),
+.rose-petals > div:nth-child(6) {
+    border-radius: 0 30px 0 30px;
+    background: #b81b43;
+    left: 0;
+    transform-origin: bottom right;
+}
+
+.rose-petals > div:nth-child(3),
+.rose-petals > div:nth-child(5),
+.rose-petals > div:nth-child(7) {
+    border-radius: 30px 0 30px 0;
+    left: 40px;
+    transform-origin: bottom left;
+}
+
+/* Petal animations */
+.rose-petals > div:nth-child(2) {
+    animation: openRose2 3s ease-in-out forwards;
+    animation-delay: 2s;
+    z-index: 5;
+    background: #9e183a;
+    top: 10px;
+    height: 70px;
+}
+
+.rose-petals > div:nth-child(3) {
+    animation: openRose3 3s ease-in-out forwards;
+    animation-delay: 2s;
+    z-index: 4;
+    background: #9e183a;
+    top: 10px;
+    height: 70px;
+}
+
+.rose-petals > div:nth-child(4) {
+    animation: openRose4 3s ease-in-out forwards;
+    animation-delay: 2s;
+    z-index: 3;
+    background: #b81b43;
+    top: 5px;
+    height: 75px;
+}
+
+.rose-petals > div:nth-child(5) {
+    animation: openRose5 3s ease-in-out forwards;
+    animation-delay: 2s;
+    z-index: 2;
+    background: #b81b43;
+    top: 5px;
+    height: 75px;
+}
+
+.rose-petals > div:nth-child(6) {
+    animation: openRose6 3s ease-in-out forwards;
+    animation-delay: 2s;
+    z-index: 1;
+    background: #c9204b;
+}
+
+.rose-petals > div:nth-child(7) {
+    animation: openRose7 3s ease-in-out forwards;
+    animation-delay: 2s;
+    z-index: 0;
+    background: #c9204b;
+}
+
+/* Rose leaves and stem */
+.rose-leaves > div:nth-child(1) {
+    width: 6px;
+    height: 230px;
+    background: #066406;
+    top: 80px;
+    left: 40px;
+}
+
+.rose-leaves > div:nth-child(2) {
+    width: 55px;
+    height: 30px;
+    background: #338f37;
+    position: absolute;
+    top: 60px;
+    left: 15px;
+    border-radius: 100px;
+}
+
+/* Thorns */
+.thorns > div {
+    width: 30px;
+    height: 30px;
+    background: #066406;
+    top: 100px;
+    left: 10px;
+}
+
+.thorns > div:after,
+.thorns > div:before {
+    content: "";
+    position: absolute;
+    width: 41px;
+    height: 31px;
+    border-radius: 100%;
+    background: #122139;
+}
+
+.thorns > div:after {
+    left: -12px;
+    top: 17px;
+}
+
+.thorns > div:before {
+    left: -11px;
+    top: -11px;
+    z-index: 0;
+}
+
+.thorns > div:nth-child(2) {
+    top: 150px;
+    transform: rotate(180deg);
+    left: 45px;
+}
+
+.thorns > div:nth-child(3) {
+    top: 180px;
+}
+
+.thorns > div:nth-child(4) {
+    top: 220px;
+    transform: rotate(180deg);
+    left: 45px;
+}
+
+/* Sparkles */
+.sparkles {
+    bottom: -40px;
+}
+
+.sparkles > div {
+    width: 4px;
+    height: 4px;
+    border-radius: 100px;
+    background: #ff96c0;
+    box-shadow: 0 0 12px 2px #ff4e85;
+    bottom: 0;
+    opacity: 0;
+    animation: sparkle 4s ease-in-out infinite;
+}
+
+/* Message text */
+.message {
+    position: absolute;
+    bottom: 30px;
+    width: 100%;
+    text-align: center;
+    color: white;
+    font-size: 18px;
+    z-index: 10;
+    font-weight: bold;
+    font-style: italic;
+    font-family: Arial,sans-serif;
+}
+
+.message p {
+    margin: 0;
+    line-height: 1.5;
+    text-shadow: 0 0 5px rgba(0,0,0,0.5);
+    font-weight: bold;
+    font-style: italic;
+}
+
+.emoji {
+    font-size: 22px;
+    vertical-align: middle;
+    display: inline-block;
+    animation: pulse 2s infinite;
+}
+
+/* Keyframe animations */
+@keyframes glowing {
+    50% { box-shadow: 0 0 60px rgba(245, 148, 184, 1); }
+}
+
+@keyframes openRose2 {
+    50% { transform: rotate(-90deg); top: 80px; left: 100px; }
+    100% { transform: rotate(-60deg); top: 210px; left: -30px; }
+}
+
+@keyframes openRose3 {
+    100% { transform: rotate(60deg); }
+}
+
+@keyframes openRose4 {
+    100% { transform: rotate(-30deg); }
+}
+
+@keyframes openRose5 {
+    100% { transform: rotate(30deg); }
+}
+
+@keyframes sparkle {
+    50% { opacity: 1; }
+    100% { bottom: 250px; }
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+}
